@@ -1,6 +1,7 @@
 package aufgabe;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -67,7 +68,12 @@ public class MainContent extends JPanel {
         buttonPanel.add(exitButton);
 
         // Füge hier ComboBox ein
+        JComboBox<String> testComboBox = new JComboBox<String>();
+        this.add(testComboBox, BorderLayout.SOUTH);
 		
+        // Elemente der ComboBox hinzufuegen
+        testComboBox.addItem("Test1");
+        testComboBox.addItem("Test 2");
 		
     }
 
