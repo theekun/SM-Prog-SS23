@@ -65,6 +65,8 @@ public class MainContent extends JPanel {
 
         JButton exitButton = new JButton("Anwendung beenden");
         buttonPanel.add(exitButton);
+
+        // Füge hier ComboBox ein
 		
 		
     }
