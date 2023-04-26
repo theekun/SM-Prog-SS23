@@ -10,10 +10,23 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
 public class MainContent extends JPanel {
+
+    private GenericTest[] tests; // Array fuer 10 Objekte des Typs GenericTest
+    private int numTests; // zaehler
+    private GenericTest currentTest; //referenz zum aktuellen test
 	
 	public MainContent() {
-		
-		// Hier können Sie den Inhalt Ihres Panels definieren
+        tests = new GenericTest[10];
+        numTests = 0;
+        currentTest = null;
+        addComponents();
+    
+    }	
+
+    // methode um die inhalte dem panel hinzuzufuegen
+    private void addComponents() {
+        
+        // Hier werden die Inhalte meines Panels definiert
 		
 		// Menüleiste erstellen
         JMenuBar menuBar = new JMenuBar();
@@ -68,13 +81,17 @@ public class MainContent extends JPanel {
         buttonPanel.add(exitButton);
 
         // Füge hier ComboBox ein
-        JComboBox<String> testComboBox = new JComboBox<String>();
+        JComboBox<GenericTest> testComboBox = new JComboBox<>(tests);
         this.add(testComboBox, BorderLayout.SOUTH);
 		
         // Elemente der ComboBox hinzufuegen
-        testComboBox.addItem("Test1");
-        testComboBox.addItem("Test 2");
+        //testComboBox.addItem("Test1");
+        //testComboBox.addItem("Test 2");
 		
+    }
+    // method to get reference to current test
+    public GenericTest getCurrentTest() {
+        return currentTest;
     }
 
 }
